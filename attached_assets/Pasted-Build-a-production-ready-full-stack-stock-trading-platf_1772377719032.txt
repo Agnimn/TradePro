@@ -1,0 +1,101 @@
+Build a production-ready full-stack stock trading platform inspired by Zerodha (Kite).
+
+Project Name: TradeSphere
+
+Tech Stack:
+Frontend:
+- React (Vite)
+- Tailwind CSS
+- Axios
+- React Router
+- Chart.js or Recharts for stock charts
+- Context API for state management
+
+Backend:
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT Authentication
+- bcrypt for password hashing
+- Redis (optional for caching stock prices)
+- WebSocket (Socket.io) for live stock price updates
+
+Database Models:
+1. User
+   - name
+   - email (unique)
+   - password (hashed)
+   - balance
+   - portfolio (array of stocks)
+   - transactions (buy/sell history)
+
+2. Stock
+   - symbol
+   - companyName
+   - currentPrice
+   - dayHigh
+   - dayLow
+   - volume
+   - historicalPrices (array)
+
+3. Order
+   - userId
+   - stockSymbol
+   - type (BUY/SELL)
+   - quantity
+   - price
+   - status (PENDING/EXECUTED)
+
+Core Features:
+- User signup & login (JWT based auth)
+- Dashboard with:
+  - Available balance
+  - Portfolio value
+  - P&L calculation
+- Real-time stock price updates using WebSockets
+- Stock search functionality
+- Interactive stock chart (1D, 1W, 1M, 1Y)
+- Buy/Sell stocks with order validation
+- Order execution logic
+- Transaction history
+- Responsive UI (mobile + desktop)
+
+Advanced Features:
+- Limit orders
+- Stop-loss orders
+- Watchlist
+- Pagination for stock list
+- Input validation
+- API rate limiting
+- Role-based admin panel to add stocks
+- Error handling middleware
+- Proper folder structure (MVC)
+
+Non-Functional Requirements:
+- Scalable architecture
+- Secure authentication
+- Clean code structure
+- RESTful API design
+- Environment variables (.env)
+- Proper README with setup instructions
+
+Project Structure:
+- client/
+- server/
+- controllers/
+- models/
+- routes/
+- middleware/
+- config/
+
+Include:
+- Sample dummy stock data
+- Seed script for MongoDB
+- API documentation
+- Comments explaining important logic
+
+Make it deployment-ready for:
+- Frontend: Vercel/Netlify
+- Backend: Render/Railway
+
+Generate full code step by step with explanation.
