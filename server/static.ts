@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export function serveStatic(app: Express) {
-  // Vite builds into dist/public
   const distPath = path.resolve(process.cwd(), "dist/public");
 
   if (!fs.existsSync(distPath)) {
@@ -16,11 +15,10 @@ export function serveStatic(app: Express) {
     );
   }
 
-  // Serve static assets
   app.use(express.static(distPath));
 
-  // SPA fallback — serve index.html for all other routes
-  app.get("*", (_req, res) => {
+  // Express 5 compatible SPA fallback
+  app.use((req, res) => {
     res.sendFile(path.join(distPath, "index.html"));
   });
 }
