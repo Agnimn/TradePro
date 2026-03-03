@@ -77,7 +77,7 @@ TradePro
 
 ### 1️⃣ Clone Repository
 
-``bash
+
 git clone <your-repo-url>
 cd TradePro
 
