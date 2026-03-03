@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Clean Minimal Trading Aesthetic - Light */
+    --background: 0 0% 100%;
+    --foreground: 220 10% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 10%;
+    
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 10% 10%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+    
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 10% 10%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.375rem;
+
+    /* Trading specific colors */
+    --profit: 142 71% 45%;
+    --profit-foreground: 0 0% 100%;
+    --profit-muted: 142 71% 45% / 0.1;
+    
+    --loss: 0 84% 60%;
+    --loss-foreground: 0 0% 100%;
+    --loss-muted: 0 84% 60% / 0.1;
+
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 220 10% 10%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 94%;
+    --sidebar-accent-foreground: 220 10% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+  .dark {
+    --background: 220 10% 8%;
+    --foreground: 210 40% 98%;
+    
+    --card: 220 10% 10%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 220 10% 10%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 217 90% 65%;
+    --primary-foreground: 220 10% 8%;
+    
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 220 10% 14%;
+    --muted-foreground: 220 8% 60%;
+    
+    --accent: 220 10% 14%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 220 10% 16%;
+    --input: 220 10% 16%;
+    --ring: 217 90% 65%;
+
+    /* Trading specific colors */
+    --profit: 142 60% 45%;
+    --loss: 0 70% 55%;
+
+    --sidebar-background: 220 10% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 90% 65%;
+    --sidebar-primary-foreground: 220 10% 8%;
+    --sidebar-accent: 220 10% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 10% 16%;
+    --sidebar-ring: 217 90% 65%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    font-family: var(--font-sans);
+  }
+
+  /* Make tables tabular and sharp */
+  table {
+    @apply text-sm;
+  }
+}
+
+@layer utilities {
+  .text-profit {
+    color: hsl(var(--profit));
+  }
+  .bg-profit {
+    background-color: hsl(var(--profit));
+  }
+  .text-loss {
+    color: hsl(var(--loss));
+  }
+  .bg-loss {
+    background-color: hsl(var(--loss));
+  }
+  .font-numeric {
+    font-family: var(--font-mono);
+    @apply tabular-nums tracking-tight;
+  }
+  
+  /* Custom scrollbar for clean look */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
+  }
+}
