@@ -81,28 +81,30 @@ TradePro
 git clone <your-repo-url>
 cd TradePro
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 npm install
-3️⃣ Configure Environment Variables
+
+### 3️⃣ Configure Environment Variables
 
 Create a .env file in the root directory:
 
 DATABASE_URL=your_postgresql_connection_string
 PORT=5000
-4️⃣ Push Database Schema
+### 4️⃣ Push Database Schema
 npx drizzle-kit push
-5️⃣ Start Development Server
+### 5️⃣ Start Development Server
 npm run dev
 
 Open:
 
 http://localhost:5000
 🔍 API Example
+
 GET /api/stocks
 
 Returns stock data stored in PostgreSQL.
 
-🧩 Architecture Highlights
+### 🧩 Architecture Highlights
 
 Uses a type-safe ORM (Drizzle) for database operations
 
@@ -112,7 +114,7 @@ Production-aware environment handling
 
 Automatic database seeding on first run
 
-🎯 Future Improvements
+### 🎯 Future Improvements
 
 User authentication (JWT)
 
@@ -126,7 +128,7 @@ Interactive stock charts
 
 Deployment pipeline (Docker + CI/CD)
 
-📌 Why This Project Matters
+### 📌 Why This Project Matters
 
 This project showcases:
 
@@ -138,7 +140,7 @@ Modern TypeScript backend design
 
 Production-level architecture decisions
 
-👨‍💻 Author
+### 👨‍💻 Author
 
 Agni
 MERN-STACK Developer | Software Engineering Enthusiast
